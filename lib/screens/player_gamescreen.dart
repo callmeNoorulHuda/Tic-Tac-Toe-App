@@ -42,6 +42,19 @@ class PlayerGameScreen extends StatelessWidget {
               },
             ),
           ),
+          if (gameProvider.winner != null)
+            Text(
+              gameProvider.winner == 'Draw'
+                  ? 'It\'s a Draw!'
+                  : 'Winner: ${gameProvider.winner}',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ElevatedButton(
+            onPressed: () {
+              gameProvider.resetGame();
+            },
+            child: Text('Reset Game'),
+          ),
         ],
       ),
     );
