@@ -8,33 +8,47 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Tic Tac Toe")),
-      body: Center(
-        child: Column(
-          children: [
-            Text("Welcome to Tic Tac Toe"),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const PlayerGameScreen(),
-                  ),
-                );
-              },
-              child: const Text("Play vs Player"),
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.red, Colors.blue],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const ComputerGameScreen(),
-                  ),
-                );
-              },
-              child: const Text("Play vs Computer"),
-            ),
-          ],
+            children: [
+              Text("Welcome to Tic Tac Toe", style: TextStyle(fontSize: 30)),
+              SizedBox(height: 100),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(),
+
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const PlayerGameScreen(),
+                    ),
+                  );
+                },
+                child: const Text("Play vs Player"),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ComputerGameScreen(),
+                    ),
+                  );
+                },
+                child: const Text("Play vs Computer"),
+              ),
+            ],
+          ),
         ),
       ),
     );
