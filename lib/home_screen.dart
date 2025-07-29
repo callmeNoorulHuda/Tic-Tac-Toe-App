@@ -24,28 +24,46 @@ class HomeScreen extends StatelessWidget {
               Text("Welcome to Tic Tac Toe", style: TextStyle(fontSize: 30)),
               SizedBox(height: 100),
 
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(),
+              SizedBox(
+                width: 300,
+                height: 70,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.red,
+                    textStyle: TextStyle(fontSize: 22),
+                  ),
 
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const PlayerGameScreen(),
-                    ),
-                  );
-                },
-                child: const Text("Play vs Player"),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const PlayerGameScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Player vs Player"),
+                ),
               ),
+              SizedBox(height: 50),
 
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const ComputerGameScreen(),
-                    ),
-                  );
-                },
-                child: const Text("Play vs Computer"),
+              SizedBox(
+                height: 70,
+                width: 300,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue,
+                    textStyle: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ComputerGameScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Player vs Computer"),
+                ),
               ),
             ],
           ),
