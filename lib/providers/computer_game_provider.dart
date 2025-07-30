@@ -9,6 +9,8 @@ class ComputerGameProvider extends ChangeNotifier {
   String get currentPlayer => _currentPlayer;
   String? get winner => _winner;
 
+  Color color = Colors.red;
+
   void tapSquare(int index) {
     if (_board[index] == '' && _winner == null && _currentPlayer == 'X') {
       _board[index] = 'X';
@@ -17,7 +19,9 @@ class ComputerGameProvider extends ChangeNotifier {
       if (_winner == null) {
         _currentPlayer = 'O';
         notifyListeners();
-        computerMove(); // computer move after player
+        Future.delayed(Duration(seconds: 1)).then((_) {
+          computerMove();
+        }); // computer move after player
       }
     }
   }

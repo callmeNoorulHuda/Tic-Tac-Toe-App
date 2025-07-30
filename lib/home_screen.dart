@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'screens/player_gamescreen.dart';
 import 'screens/computer_gamescreen.dart';
 
@@ -21,7 +22,13 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-              Text("Welcome to Tic Tac Toe", style: TextStyle(fontSize: 30)),
+              Text(
+                "Welcome to \nTic Tac Toe",
+                style: GoogleFonts.pressStart2p(
+                  textStyle: TextStyle(fontSize: 25),
+                ),
+              ),
+
               SizedBox(height: 100),
 
               SizedBox(
@@ -31,6 +38,7 @@ class HomeScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.red,
+
                     textStyle: TextStyle(fontSize: 22),
                   ),
 
@@ -41,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text("Player vs Player"),
+                  child: Text("Player vs Player"),
                 ),
               ),
               SizedBox(height: 50),
