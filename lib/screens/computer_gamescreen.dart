@@ -30,7 +30,7 @@ class ComputerGameScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      " Player \n   vs \nComputer",
+                      " Player \n   vs\nComputer",
                       style: GoogleFonts.pressStart2p(
                         textStyle: TextStyle(fontSize: 25),
                       ),
